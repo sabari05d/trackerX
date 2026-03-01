@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">TrackerX</string>
+    <string name="title_activity_main">TrackerX</string>
+    <string name="package_name">com.trackerx.app</string>
+    <string name="custom_url_scheme">com.trackerx.app</string>
+</resources>

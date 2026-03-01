@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#0D1117] text-white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sat: env(safe-area-inset-top);
+  --sab: env(safe-area-inset-bottom);
+}
+
+body {
+  background-color: #0d1117;
+  /* Prevent horizontal bounce and scrolling issues */
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+}
+
+#root {
+  /* This adds the padding you need at the very bottom of the app */
+  padding-bottom: calc(var(--sab) + 2rem);
+  min-height: 100vh;
+}
