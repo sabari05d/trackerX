@@ -71,6 +71,7 @@ export default function HabitView() {
 
     return (
         <div className="min-h-screen bg-[#0D1117] text-white p-6 md:p-12">
+            <div style={{ paddingTop: 'var(--sat)' }} />
             <Link to="/" className="flex items-center gap-2 text-zinc-500 hover:text-white mb-8 transition">
                 <ChevronLeft size={20} /> Back to Dashboard
             </Link>
