@@ -26,6 +26,6 @@ body {
 
 #root {
   /* This adds the padding you need at the very bottom of the app */
-  padding-bottom: calc(var(--sab) + 2rem);
+  /* padding-bottom: calc(var(--sab) + 2rem); */
   min-height: 100vh;
 }

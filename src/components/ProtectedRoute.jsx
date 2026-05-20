@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ProtectedRoute({ children, adminOnly = false }) {
     const [loading, setLoading] = useState(true);
@@ -34,6 +35,14 @@ export default function ProtectedRoute({ children, adminOnly = false }) {
         checkUser();
     }, []);
 
+    if (loading) return (
+        <div className="flex h-screen items-center justify-center bg-[#09090b]">
+            <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ repeat: Infinity, duration: 1.5 }} className="text-zinc-600 font-black tracking-widest uppercase text-xs">
+                Loading...
+            </motion.div>
+        </div>
+    );
+
     if (loading) return <div className="h-screen bg-black flex items-center justify-center text-white">Verifying...</div>;
 
     // Safe checks to prevent reading properties of null
@@ -53,7 +62,7 @@ export default function ProtectedRoute({ children, adminOnly = false }) {
         );
     }
 
-    if (adminOnly && !userStatus.is_admin) return <Navigate to="/" />;
+    if (adminOnly && !userStatus.is_admin) return <Navigate to="/dashboard" />;
 
     return children;
 }

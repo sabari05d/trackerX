@@ -15,7 +15,7 @@ export default function Auth() {
         if (error) {
             alert(error.message);
         } else {
-            navigate('/'); // Redirect to dashboard on success
+            navigate('/dashboard'); // Redirect to dashboard on success
         }
         setLoading(false);
     };
